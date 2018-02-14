@@ -1,0 +1,80 @@
+h1 {
+	color: #FF711C;
+	font-size: 20px;
+}
+
+.info {
+	color: #888;
+	font-size: 16px;
+	font-weight: 500;
+    margin-top: 12px;
+}
+
+.info .label {
+	color: #444;
+	font-weight: 600;
+    margin-right: 8px;
+}
+
+.info.review {
+	margin-top: 24px;
+}
+
+.info.review + .info.review {
+	margin-top: 12px;
+}
+
+.temp-title {
+	color: #FF711C;
+	font-size: 21px;
+    font-weight: 500;
+    margin-bottom: 24px;
+}
+
+.card.search {
+    margin-bottom: 32px;
+	width: 720px;
+	text-align: left;
+}
+
+.search-input {
+    overflow: hidden;
+	border: none;
+    color: #000;
+	font-size: 21px;
+	font-weight: 700;
+    width: 500px;
+	margin: 32px 0 32px 40px;
+	display: inline-block
+}
+
+.search-submit {
+	background-color: rgba(0, 0, 0, 0);
+	border: none;
+	float: right;
+	color: #FF711C;
+	font-size: 21px;
+	font-weight: 700;
+	margin: 32px 40px 32px 0;
+	display: inline-block;
+}
+
+.search-submit:hover {
+	cursor: pointer;
+}
+
+div.add-buttons {
+	width: 100%;
+	text-align: right;
+    margin-top: 24px;
+}
+
+a.add-info {
+	color: #FF711C;
+	text-decoration: none;
+	text-align: right;
+    margin-left: 32px;
+	font-size: 16px;
+	font-weight: 700;
+	display: inline;
+}

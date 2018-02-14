@@ -1,0 +1,91 @@
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+body {
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+.card {
+	background-color: #fff;
+	color: #f80;
+	position: relative;
+	text-align: center;
+	margin: 10px auto;
+	border: 1px solid #EEE;
+	box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08);
+}
+
+.card:first-of-type {
+    margin-top: 212px;
+}
+
+.card:last-of-type {
+	margin-bottom: 136px;
+}
+
+.card-content {
+	text-align: left;
+	padding: 36px 45px;
+}
+
+.card-button {
+	text-align: center;
+	display: block;
+	background-color: rgba(0,0,0,0);
+	border: none;
+	color: #FF711C;
+	font-size: 18px;
+	font-weight: 700;
+	width: 100%;
+	padding: 32px 0px;
+    text-decoration: none;
+}
+
+.card-button:hover {
+	cursor: pointer;
+	background-color: #FF8B00;
+	color: #fff;
+}
+
+.card-shadow {
+	z-index: -10;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08);
+}
+
+.page-width {
+	width: 560px;
+}
+
+div.background-container {
+	position: fixed;
+	top: -100vh;
+	left: 0;
+	width: 100%;
+    height: 100%;
+	z-index: -1;
+}
+
+div.background-outside-margin {
+	margin-top: calc(100vh + 192px);
+}
+
+div.background {
+	margin-top: calc(200vh - 56.25vw);
+	width: 100%;
+    height: 56.25vw;
+	background: url("/static/img/background.png");
+	background-size: contain;
+}
+
+div.footer {
+	position: fixed;
+	width: 100%;
+	text-align: center;
+	bottom: 8px;
+	font-size: 12px;
+    font-weight: 200;
+}

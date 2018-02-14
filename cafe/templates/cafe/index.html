@@ -1,0 +1,48 @@
+{% extends "global.html" %}
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{% static 'cafe/css/index.css' %}"/>
+{% endblock %}
+
+{% block content %}
+    <div class="card search">
+        <form action="{% url 'cafe:index' %}" name="search" method="GET">
+            {% if search_string %}
+                <input class="search-input" type="text" name="search_string" placeholder="강남, 신촌, 홍대..." value="{{ search_string }}" />
+            {% else %}
+                <input class="search-input" type="text" name="search_string" placeholder="강남, 신촌, 홍대..." autofocus/>
+            {% endif %}
+            <input class="search-submit" type="submit" value="검색"/>
+        </form>
+    </div>
+    {% for cafe in cafes %}
+        <div class="card page-width">
+            <div class="card-content">
+                <h2 class="temp-title">{{ cafe.name }}</h2>
+                <p class="info"><span class="label">주소</span>{{ cafe.address }}</p>
+                {% if cafe.prices_set.first %}
+                    <p class="info"><span class="label">아메리카노 가격</span>{{ cafe.prices_set.first.americano }}KRW</p>
+                {% endif %}
+                {% if cafe.review_set.first %}
+                    <p class="info"><span class="label">전기 코드</span>{{ cafe.review_set.first.plug_string }}</p>
+                    <p class="info"><span class="label">와이파이</span>{{ cafe.review_set.first.wifi_string }}</p>
+                {% endif %}
+                {% for review in cafe.review_set.all %}
+                    {% if review.comment %}
+                        <p class="info review"><span class="label">리뷰 {{ forloop.counter }}</span>{{  review.comment }}</p>
+                    {% endif %}
+                {% endfor %}
+                <div class="add-buttons">
+                    {% if not cafe.prices_set.first %}
+                        <a class="add-info" href="{% url 'cafe:add_prices' cafe.pk %}">가격 추가하기</a>
+                    {% endif %}
+                    <a class="add-info" href="{% url 'cafe:add_review' cafe.pk %}">리뷰 추가하기</a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    <div class="card page-width">
+        <a class="card-button" href={% url 'cafe:create' %}>추가하기</a>
+    </div>
+{% endblock %}

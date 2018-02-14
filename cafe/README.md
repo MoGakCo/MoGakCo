@@ -1,11 +1,14 @@
-Cafe description page
-
-** Cafe Info Model
-name: name of cafe (like 스탠다드 커피바)
-power: 0, 1, 2 (no outlets, some outlets, a lot of outlets)
-wifi: 0, 1, 2 (bad wifi, okay wifi, good wifi)
-americano: price of americano
-start_weekday, start_sat, start_sun: Opening time for each day
-end_weekday, end_sat, end_sun: Opening time for each day
-comment: comment from writer
-address: address of cafe
+## Cafe Model
+`name`: Name of cafe (from Naver Maps)
+`address`: Address of cafe (from Naver Maps)
+`plug`: Does the cafe have enough power plugs?
+* 0: None
+* 1: Some
+* 2: A lot
+`wifi`: Does the cafe have reliable wifi?
+* 0: Bad wifi (=no wifi)
+* 1: Okay wifi
+* 2: Good wifi
+`americano`: Price of a regular sized americano
+`open`: Opening times *in minutes*
+`close`: Closing times *in minutes*
